@@ -2,8 +2,9 @@
 
 name: THIS IS WK
 paginate: 25
-url: wangki.github.io/blog
+url: wangki.github.io
 blog_theme: light # Or use dark
+#baseurl: will use THIS IS WK . com
 
 # Optional settings
 
