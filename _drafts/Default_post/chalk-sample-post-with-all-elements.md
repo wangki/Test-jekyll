@@ -6,6 +6,7 @@ og_image: "documentation/sample-image.jpg"
 tags: [design, jekyll]
 ---
 
+2016-10-15-chalk-sample-post-with-all-elements
 Chalk uses the default Jekyll syntax highlighting gem Rouge. It has a customized style for both light and dark theme.
 Use the `highlight` tag to use the following code highlighting your preferred language:
 
