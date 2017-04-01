@@ -10,6 +10,12 @@ sitemap: false
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ site.name }} | Page not found</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+      var host = "thisiswk.com";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+  </script>
+
 
   {% if site.local_fonts %}
     {% stylesheet fonts %}
