@@ -2,7 +2,8 @@
 
 name: THIS IS WK
 paginate: 25
-url: thisiswk.com
+url: https://thisiswk.com
+enforce_ssl: www.thisiswk.com
 blog_theme: light # Or use dark
 #baseurl: will use THIS IS WK . com
 
