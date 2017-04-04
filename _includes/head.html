@@ -17,8 +17,6 @@
   <meta name="twitter:title" content="{{ page.title }}">
   <meta name="twitter:description" content="{{ page.description }}">
   <meta name="twitter:image" content="{{ site.url }}{% if page.og_image %}{{ page.og_image | asset_path }}{% else %}{% asset_path og-image.jpg %}{% endif %}">
-  <!--Naver Site verifcation-->
-  <meta name="naver-site-verification" content="bf7ad3455b6f588891e5a58fd0adfce3ea9ad876"/>
   <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
   <link rel="apple-touch-icon" href="{% asset_path apple-touch-icon.png %}">
   <link href="{{ 'feed.xml' | absolute_url }}" type="application/rss+xml" rel="alternate" title="{{ site.name }} Last 10 blog posts" />
@@ -27,7 +25,6 @@
       if ((host == window.location.host) && (window.location.protocol != "https:"))
           window.location.protocol = "https";
   </script>
-
 
 
   {% if site.local_fonts %}
