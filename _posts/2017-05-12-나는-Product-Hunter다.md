@@ -2,7 +2,7 @@
 layout: post
 title: "저는 Product Hunter 입니다"
 description: "아이디어를 탐닉하고 공유하는 사람들"
-tags: [producthunter, product, Product hunt]
+tags: [hunter, product, Product hunt]
 ---
 
 ![](https://images.unsplash.com/photo-1493746799625-0484dd295a39?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=faeaa9256c556d88e1f363fe21f3a643)
