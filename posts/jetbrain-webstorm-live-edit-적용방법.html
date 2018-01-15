@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>THIS IS WK | Jetbrain WebStorm Live edit 적용방법</title>
+  <meta name="description" content="실시간으로 변경사항을 확인할 수 있는 Front-End 개발자의 무기">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Jetbrain WebStorm Live edit 적용방법">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thisiswk.com/posts/jetbrain-webstorm-live-edit-%EC%A0%81%EC%9A%A9%EB%B0%A9%EB%B2%95">
+  <meta property="og:description" content="실시간으로 변경사항을 확인할 수 있는 Front-End 개발자의 무기">
+  <meta property="og:site_name" content="THIS IS WK">
+  <meta property="og:image" content="https://thisiswk.com/assets/og-image.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://thisiswk.com/posts/jetbrain-webstorm-live-edit-%EC%A0%81%EC%9A%A9%EB%B0%A9%EB%B2%95">
+  <meta name="twitter:title" content="Jetbrain WebStorm Live edit 적용방법">
+  <meta name="twitter:description" content="실시간으로 변경사항을 확인할 수 있는 Front-End 개발자의 무기">
+  <meta name="twitter:image" content="https://thisiswk.com/assets/og-image.png">
+  <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://thisiswk.com/feed.xml" type="application/rss+xml" rel="alternate" title="THIS IS WK Last 10 blog posts" />
+  <script type="text/javascript">
+      var host = "thisiswk.com";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+  </script>
+
+
+  
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="THIS IS WK">THIS IS WK</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <span class="icon icon-android-person"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/testarossa.k" target="_blank" title="Facebook">
+          <span class="icon icon-social-facebook"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://github.com/wangki" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/leewk" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:wonkeun6@gmail.comm" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Jetbrain WebStorm Live edit 적용방법</h1>
+            <p>실시간으로 변경사항을 확인할 수 있는 Front-End 개발자의 무기</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                March 19, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  1 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/webstorm">webstorm</a>
+                
+                  <a href="/tag/liveedit">liveedit</a>
+                
+                  <a href="/tag/jetbrain">jetbrain</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>학교 이메일로 웹 스톰을 쓰고 있다. Live Edit 이라는 기능이 정말 마음에 드는데, 처음 할 때 친절히 설명된 곳을 찾기 어려웠다. 간단히 설명해보자면 HTML 페이지의 변경사항을 바로 브라우저에 띄워주는 기능이다. 하나 변경하고 새로고침 하는게 꽤 번거로운일이라 Live Edit 기능을 이용하면 정말 쉽게 변경사항을 확인할 수 있다.</p>
+
+<h2 id="준비물">준비물</h2>
+
+<ul>
+  <li>WebStorm</li>
+  <li>Jetbrain 크롬 익스텐션 설치 ( <a href="https://goo.gl/u9t3SH">https://goo.gl/u9t3SH</a> )</li>
+  <li>Live Edit 할 Html 페이지</li>
+</ul>
+
+<h2 id="설정">설정</h2>
+
+<p>아래와 같은 순서로 진행한다.</p>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/notion-static/80dd132b78ec4c29b37a075f0721f01c/Untitled" alt="" />
+<img src="https://s3-us-west-2.amazonaws.com/notion-static/6d8e403de2ca4d73a7dbc2f3af37f227/Untitled" alt="" /></p>
+
+<ol>
+  <li>우측 상단의 <code class="highlighter-rouge">Edit Configurations.. </code> 를 선택한다. (Fig. 1)</li>
+  <li>2번째 이미지와 같은 설정창이 표시된다. + 버튼으로 Javascript Debug 를 새로 추가한다. (Fig. 2)</li>
+  <li>원하는 프로젝트를 열고, Live Edit 하려는 파일을 선택한다.</li>
+  <li>브라우저를 크롬으로 설정한다. (Default : Chrome)</li>
+</ol>
+
+<h2 id="실행">실행</h2>
+
+<p>간단히 상단에 표시되는 벌레(Debug) 버튼을 누르면 아래 Debug Console 이 활성화 되고 크롬 브라우저에 Live Edit 이 되는 창이 띄워진다.</p>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/notion-static/a439034a2d8c452a84a4e3d37bbb5f74/Untitled" alt="" /></p>
+
+<p>혹시나 크롬 익스텐션을 설치하지 않았다면 <a href="https://goo.gl/u9t3SH">JetBrain IDE Support Extension</a> 을 설치하자.</p>
+
+<p>( 안해봤지만 PHP storm 등도 마찬가지로 세팅 할 수 있을 듯 하다. )</p>
+
+<h2 id="결론">결론</h2>
+
+<p>이렇게 하면 편하다!</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Jetbrain WebStorm Live edit 적용방법 - https://thisiswk.com/posts/jetbrain-webstorm-live-edit-%EC%A0%81%EC%9A%A9%EB%B0%A9%EB%B2%95 ', 'newwindow', 'width=500, height=225'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" width="15px" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x37__stroke"><g id="Twitter"><rect clip-rule="evenodd" fill="none" fill-rule="evenodd" height="128" width="128"/><path clip-rule="evenodd" d="M128,23.294    c-4.703,2.142-9.767,3.59-15.079,4.237c5.424-3.328,9.587-8.606,11.548-14.892c-5.079,3.082-10.691,5.324-16.687,6.526    c-4.778-5.231-11.608-8.498-19.166-8.498c-14.493,0-26.251,12.057-26.251,26.927c0,2.111,0.225,4.16,0.676,6.133    C41.217,42.601,21.871,31.892,8.91,15.582c-2.261,3.991-3.554,8.621-3.554,13.552c0,9.338,4.636,17.581,11.683,22.412    c-4.297-0.131-8.355-1.356-11.901-3.359v0.331c0,13.051,9.053,23.937,21.074,26.403c-2.201,0.632-4.523,0.948-6.92,0.948    c-1.69,0-3.343-0.162-4.944-0.478c3.343,10.694,13.035,18.483,24.53,18.691c-8.986,7.227-20.315,11.533-32.614,11.533    c-2.119,0-4.215-0.123-6.266-0.37c11.623,7.627,25.432,12.088,40.255,12.088c48.309,0,74.717-41.026,74.717-76.612    c0-1.171-0.023-2.342-0.068-3.49C120.036,33.433,124.491,28.695,128,23.294" fill-rule="evenodd" id="Twitter_1_"/></g></g></svg>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://thisiswk.com/posts/jetbrain-webstorm-live-edit-%EC%A0%81%EC%9A%A9%EB%B0%A9%EB%B2%95', 'newwindow', 'width=500, height=500'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" width="15px" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x31__stroke"><g id="Facebook_1_"><rect fill="none" height="128" width="128"/><path clip-rule="evenodd" d="M68.369,128H7.065C3.162,128,0,124.836,0,120.935    V7.065C0,3.162,3.162,0,7.065,0h113.871C124.837,0,128,3.162,128,7.065v113.87c0,3.902-3.163,7.065-7.064,7.065H88.318V78.431    h16.638l2.491-19.318H88.318V46.78c0-5.593,1.553-9.404,9.573-9.404l10.229-0.004V20.094c-1.769-0.235-7.841-0.761-14.906-0.761    c-14.749,0-24.846,9.003-24.846,25.535v14.246H51.688v19.318h16.681V128z" fill-rule="evenodd" id="Facebook"/></g></g></svg>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=https://thisiswk.com/posts/jetbrain-webstorm-live-edit-%EC%A0%81%EC%9A%A9%EB%B0%A9%EB%B2%95', 'newwindow', 'width=550, height=400'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" version="1.1" viewBox="0 0 128 128" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x35__stroke"><g id="Google_Plus"><rect clip-rule="evenodd" fill="none" fill-rule="evenodd" height="128" width="128"/><path clip-rule="evenodd" d="M40.654,55.935v16.13    c0,0,15.619-0.021,21.979-0.021C59.189,82.5,53.834,88.194,40.654,88.194c-13.338,0-23.748-10.832-23.748-24.194    s10.41-24.194,23.748-24.194c7.052,0,11.607,2.483,15.784,5.944c3.344-3.35,3.065-3.828,11.573-11.877    c-7.222-6.586-16.822-10.6-27.357-10.6C18.201,23.273,0,41.507,0,64c0,22.493,18.201,40.727,40.654,40.727    c33.561,0,41.763-29.275,39.044-48.792H40.654z M113.912,56.742V42.628h-10.063v14.113H89.358v10.081h14.491v14.517h10.063V66.823    H128V56.742H113.912z" fill-rule="evenodd" id="Google_Plus_1_"/></g></g></svg>
+            </a>
+          </div>
+
+          
+        </article>
+        <footer class="footer reveal">
+  <p>
+    <!--Chalk is a high quality, completely customizable, performant and 100% free-->
+    <!--blog template for Jekyll built by-->
+    <!--<a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" target="_blank" title="Download Chalk">here</a>.-->
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+      }
+    });
+  </script>
+
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-93560728-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+<script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+</body>
+</html>

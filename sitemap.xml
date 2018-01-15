@@ -1,29 +1,292 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        {% for post in site.posts %}
+        
         <url>
-            <loc>{{ site.url }}{{ post.url }}</loc>
-            {% if post.lastmod == null %}
-            <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-            {% else %}
-            <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
-            {% endif %}
+            <loc>https://thisiswk.com/posts/product-hunt-%EC%84%9C%EC%9A%B8-%EB%B0%8B%EC%97%85-%EA%B0%9C%EC%B5%9C</loc>
+            
+            <lastmod>2017-05-24T00:00:00+09:00</lastmod>
+            
 
-            {% if post.sitemap.changefreq == null %}
+            
             <changefreq>weekly</changefreq>
-            {% else %}
-            <changefreq>{{ post.sitemap.changefreq }}</changefreq>
-            {% endif %}
+            
 
-            {% if post.sitemap.priority == null %}
+            
             <priority>0.5</priority>
-            {% else %}
-            <priority>{{ post.sitemap.priority }}</priority>
-            {% endif %}
+            
 
         </url>
-        {% endfor %}
+        
+        <url>
+            <loc>https://thisiswk.com/posts/jabra-elite-sport-%EA%B5%AC%EB%A7%A4-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0-%EB%AC%B4%EC%84%A0-%EC%9D%B4%EC%96%B4%ED%8F%B0-%EC%A0%9C%ED%92%88-%EB%B9%84%EA%B5%90</loc>
+            
+            <lastmod>2017-05-23T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/2017%EB%85%84%E1%85%B320-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</loc>
+            
+            <lastmod>2017-05-22T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/js-%EC%83%81%EC%86%8D%EA%B3%BC-new-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%9D%B4%ED%95%B4</loc>
+            
+            <lastmod>2017-05-16T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/2017%EB%85%84%E1%85%B319-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</loc>
+            
+            <lastmod>2017-05-15T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/%EB%82%98%EB%8A%94-product-hunter%EB%8B%A4</loc>
+            
+            <lastmod>2017-05-12T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/2017%EB%85%84-14-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</loc>
+            
+            <lastmod>2017-04-10T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/2017%EB%85%84-13-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</loc>
+            
+            <lastmod>2017-04-03T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/%EC%9E%A5%EC%9B%90%EC%97%90%EC%84%9C-%EC%82%B4%EC%95%84%EB%82%A8%EA%B8%B0</loc>
+            
+            <lastmod>2017-03-31T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/hyper-drive-%ED%9B%84%EA%B8%B0</loc>
+            
+            <lastmod>2017-03-31T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/%EC%82%AC%EC%9D%B4%EB%A8%BC-%EC%8B%9C%EB%84%A5-serve-those-who-serve-others</loc>
+            
+            <lastmod>2017-03-30T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/%EC%98%A8%EB%9D%BC%EC%9D%B8-%EC%BB%A4%EB%A8%B8%EC%8A%A4-%EC%8B%9C%EB%8C%80%EC%97%90-%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8%EC%9D%98-%EB%B0%98%EA%B2%A9-%EC%9D%B4-%EC%98%A8%EB%8B%A4</loc>
+            
+            <lastmod>2017-03-29T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/2017%EB%85%84-12-%EB%B2%88%EC%A7%B8-%EC%A3%BC%EC%97%90-%EC%9D%BD%EC%9D%80%EA%B2%83</loc>
+            
+            <lastmod>2017-03-29T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/2017%EB%85%84-11-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</loc>
+            
+            <lastmod>2017-03-20T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/jetbrain-webstorm-live-edit-%EC%A0%81%EC%9A%A9%EB%B0%A9%EB%B2%95</loc>
+            
+            <lastmod>2017-03-19T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/%EC%A7%80%ED%82%AC-%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%8F%84%EB%A9%94%EC%9D%B8%EA%B3%BC-https-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0</loc>
+            
+            <lastmod>2017-03-18T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/%ED%8E%98%EC%9D%B4%ED%81%AC%EB%89%B4%EC%8A%A4%EC%99%80-%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B6%81-%ED%95%B4%EB%AC%B5%EC%9D%80-%EB%85%BC%EC%9F%81</loc>
+            
+            <lastmod>2017-03-17T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
+        <url>
+            <loc>https://thisiswk.com/posts/2017%EB%85%84-10-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</loc>
+            
+            <lastmod>2017-03-13T00:00:00+09:00</lastmod>
+            
+
+            
+            <changefreq>weekly</changefreq>
+            
+
+            
+            <priority>0.5</priority>
+            
+
+        </url>
+        
     </urlset>

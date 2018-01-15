@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>THIS IS WK</title>
+    <description></description>
+    <link>https://thisiswk.com</link>
+    <atom:link href="https://thisiswk.com/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Product Hunt 서울 밋업 개최</title>
+        <description>새로운 제품과 서비스에 관심이 많은 사람들을 위한 최고의 밋업</description>
+        <pubDate>Wed, 24 May 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/product-hunt-%EC%84%9C%EC%9A%B8-%EB%B0%8B%EC%97%85-%EA%B0%9C%EC%B5%9C</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/product-hunt-%EC%84%9C%EC%9A%B8-%EB%B0%8B%EC%97%85-%EA%B0%9C%EC%B5%9C</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Jabra Elite Sport 구매, 사용 후기</title>
+        <description>무선 이어폰 제품 비교</description>
+        <pubDate>Tue, 23 May 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/jabra-elite-sport-%EA%B5%AC%EB%A7%A4-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0-%EB%AC%B4%EC%84%A0-%EC%9D%B4%EC%96%B4%ED%8F%B0-%EC%A0%9C%ED%92%88-%EB%B9%84%EA%B5%90</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/jabra-elite-sport-%EA%B5%AC%EB%A7%A4-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0-%EB%AC%B4%EC%84%A0-%EC%9D%B4%EC%96%B4%ED%8F%B0-%EC%A0%9C%ED%92%88-%EB%B9%84%EA%B5%90</guid>
+      </item>
+    
+      <item>
+        <title>2017년 20 번째 주 읽은 것</title>
+        <description>엘론머스크의 사업 계획법, 우리 삶의 AI</description>
+        <pubDate>Mon, 22 May 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/2017%EB%85%84%E1%85%B320-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/2017%EB%85%84%E1%85%B320-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</guid>
+      </item>
+    
+      <item>
+        <title>JS 상속과 `New` 키워드에 대한 이해</title>
+        <description>New와 상속에 대한 질문과 답</description>
+        <pubDate>Tue, 16 May 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/js-%EC%83%81%EC%86%8D%EA%B3%BC-new-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%9D%B4%ED%95%B4</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/js-%EC%83%81%EC%86%8D%EA%B3%BC-new-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%9D%B4%ED%95%B4</guid>
+      </item>
+    
+      <item>
+        <title>2017년 19 번째 주 읽은 것</title>
+        <description>엘론머스크의 사업 계획법, 우리 삶의 AI</description>
+        <pubDate>Mon, 15 May 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/2017%EB%85%84%E1%85%B319-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/2017%EB%85%84%E1%85%B319-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</guid>
+      </item>
+    
+      <item>
+        <title>저는 Product Hunter 입니다</title>
+        <description>아이디어를 탐닉하고 공유하는 사람들</description>
+        <pubDate>Fri, 12 May 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/%EB%82%98%EB%8A%94-product-hunter%EB%8B%A4</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/%EB%82%98%EB%8A%94-product-hunter%EB%8B%A4</guid>
+      </item>
+    
+      <item>
+        <title>2017년 14 번째 주 읽은 것</title>
+        <description>해커톤으로 살아가기, 사이드 프로젝트 마케팅</description>
+        <pubDate>Mon, 10 Apr 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/2017%EB%85%84-14-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/2017%EB%85%84-14-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</guid>
+      </item>
+    
+      <item>
+        <title>2017년 13 번째 주 읽은 것</title>
+        <description>실행없이는 아무 것도 바뀌지 않는다.</description>
+        <pubDate>Mon, 03 Apr 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/2017%EB%85%84-13-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/2017%EB%85%84-13-%EB%B2%88%EC%A7%B8-%EC%A3%BC-%EC%9D%BD%EC%9D%80%EA%B2%83</guid>
+      </item>
+    
+      <item>
+        <title>장원(莊園)에서 살아남기</title>
+        <description>GAFA가 만든 미래에서 장원의 농부가 할 일</description>
+        <pubDate>Fri, 31 Mar 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/%EC%9E%A5%EC%9B%90%EC%97%90%EC%84%9C-%EC%82%B4%EC%95%84%EB%82%A8%EA%B8%B0</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/%EC%9E%A5%EC%9B%90%EC%97%90%EC%84%9C-%EC%82%B4%EC%95%84%EB%82%A8%EA%B8%B0</guid>
+      </item>
+    
+      <item>
+        <title>킥스타터 제품, 하이퍼드라이브(hyper Drive) 후기</title>
+        <description>USB-C 포트에 필요한 최고의 악세서리</description>
+        <pubDate>Fri, 31 Mar 2017 00:00:00 +0900</pubDate>
+        <link>https://thisiswk.com/posts/hyper-drive-%ED%9B%84%EA%B8%B0</link>
+        <guid isPermaLink="true">https://thisiswk.com/posts/hyper-drive-%ED%9B%84%EA%B8%B0</guid>
+      </item>
+    
   </channel>
 </rss>

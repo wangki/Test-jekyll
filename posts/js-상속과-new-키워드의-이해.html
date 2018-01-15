@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>THIS IS WK | JS 상속과 `New` 키워드에 대한 이해</title>
+  <meta name="description" content="New와 상속에 대한 질문과 답">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="JS 상속과 `New` 키워드에 대한 이해">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thisiswk.com/posts/js-%EC%83%81%EC%86%8D%EA%B3%BC-new-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%9D%B4%ED%95%B4">
+  <meta property="og:description" content="New와 상속에 대한 질문과 답">
+  <meta property="og:site_name" content="THIS IS WK">
+  <meta property="og:image" content="https://thisiswk.com/assets/og-image.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://thisiswk.com/posts/js-%EC%83%81%EC%86%8D%EA%B3%BC-new-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%9D%B4%ED%95%B4">
+  <meta name="twitter:title" content="JS 상속과 `New` 키워드에 대한 이해">
+  <meta name="twitter:description" content="New와 상속에 대한 질문과 답">
+  <meta name="twitter:image" content="https://thisiswk.com/assets/og-image.png">
+  <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://thisiswk.com/feed.xml" type="application/rss+xml" rel="alternate" title="THIS IS WK Last 10 blog posts" />
+  <script type="text/javascript">
+      var host = "thisiswk.com";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+  </script>
+
+
+  
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="THIS IS WK">THIS IS WK</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <span class="icon icon-android-person"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/testarossa.k" target="_blank" title="Facebook">
+          <span class="icon icon-social-facebook"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://github.com/wangki" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/leewk" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:wonkeun6@gmail.comm" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>JS 상속과 `New` 키워드에 대한 이해</h1>
+            <p>New와 상속에 대한 질문과 답</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                May 16, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  4 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/js">js</a>
+                
+                  <a href="/tag/inheritances">inheritances</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p><code class="highlighter-rouge">new</code> 키워드로 함수를 호출하는 방법과 상속을 정의하는 법에 대한 질문을 아래와 같이 남겼고, 많은 분들이 도움을 주셨습니다. 도움 받은 만큼, 알게된 내용을 간단히 정리해봤습니다.</p>
+
+<h2 id="-질문-코드">🙋 질문 코드</h2>
+
+<p><strong>Run.js</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">amy</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">ben</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">van</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">amy</span><span class="p">.</span><span class="nx">move</span><span class="p">();</span>
+<span class="nx">ben</span><span class="p">.</span><span class="nx">move</span><span class="p">();</span></code></pre></figure>
+
+<p><strong>Definition.js</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Car</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">loc</span> <span class="o">=</span> <span class="nx">loc</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">Car</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">move</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">loc</span><span class="o">++</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">Van</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">loc</span><span class="p">){</span>
+	<span class="nx">Car</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="nx">loc</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<hr />
+
+<h2 id="-질문">🙋 질문</h2>
+
+<ol>
+  <li>두 번째 코드블럭에서 정의된 <code class="highlighter-rouge">Van</code> constructor에서 Return 되는 것이 <code class="highlighter-rouge">Car.call</code> 의 Return 값인가요?</li>
+  <li>그리고 <code class="highlighter-rouge">ben.move</code> 가 동작하게 하려면 아래 코드를 추가하면 되는데요, 이 코드는 Best option이 아니라고 합니다. 이 코드가 좋지 않은 이유가 무엇인가요?</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Van</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">Car</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span></code></pre></figure>
+
+<hr />
+
+<h1 id="답">답</h1>
+
+<ol>
+  <li><code class="highlighter-rouge">Car.call</code> 의 Return 값이 아니다.
+    <ul>
+      <li>new 키워드를 이용해서 함수를 호출하는 경우, 함수 자체가 bind 된 Constructor 속성을 가진 this 값이 Return 된다.</li>
+      <li>(참고)<code class="highlighter-rouge">Car.call</code> 은 Van 생성자에서 부모 생성자를 실행하는 라인</li>
+    </ul>
+  </li>
+  <li>좋지 않은 코드다.
+    <ul>
+      <li>” <code class="highlighter-rouge">[[Prototype]] (__proto__)</code> 속성의 변경은 최신 자바스크립트 엔진의 최적화 방식에 의해 매우 느린 방식” (Facebook의 박철현 님 답변)</li>
+      <li>” <code class="highlighter-rouge">__proto__</code> 는 Webkit 기반 브라우저에서 진짜 prototype을 가리키는 키워드입니다” (Okky, 단설 님 답변) 즉 <strong>Webkit 기반이 아닌 브라우저에서도 동작하게 하려면 권장되지 않는다.</strong> (ECMA 2015 에서 표준으로 지정됨)</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h1 id="상속을-정의하는-방법">상속을 정의하는 방법</h1>
+
+<p>자바스크립트는 클래스라는 개념이 없고, 객체를 복사하여(cloning) 새로운 객체를 생성하는 프로토타입 기반의 언어다. (Nextree, 2014).</p>
+
+<p>2번의 질문에서 잘못된 상속을 해결하는 방법은 아래 방법들이 있다. (Nextree 포스팅 참조)</p>
+
+<h2 id="1prototype-을-공유하는-방법">1.Prototype 을 공유하는 방법</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Van</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">Car</span><span class="p">.</span><span class="nx">prototype</span>
+
+<span class="nx">Van</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">something</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>이렇게 Prototype 을 정의하는 경우 Car 과 van은 같은 Prototype을 공유하게된다. 즉 아래와 같이 <code class="highlighter-rouge">Van.prototype</code> 에 <code class="highlighter-rouge">.something</code> 을 추가하는 경우 모든 Car instance 에도 같은 함수를 추가하게 된다. 따라서 목적에 부합하지 않는다. (Okky, 단설 님 답변)</p>
+
+<h2 id="2new-키워드를-이용해-함수를-호출하는-방법">2.new 키워드를 이용해 함수를 호출하는 방법</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Van</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">();</span>
+<span class="nx">ben</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Van</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span></code></pre></figure>
+
+<p>Prototype을 위와 같이 정의 하는 경우, Car 을 생성할 때 필요한 <code class="highlighter-rouge">loc</code> 파라미터가 <code class="highlighter-rouge">Van</code> 의 생성과정에 적용될 수 없다. <strong>따라서 Parameter 가 필요한 객체 생성에 적합하지 않다.</strong></p>
+
+<h2 id="3apply-함수를-이용해-생정자를-빌려쓰는-법">3.<code class="highlighter-rouge">apply</code> 함수를 이용해 생정자를 빌려쓰는 법.</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Van</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">Van</span><span class="p">(</span><span class="nx">loc</span><span class="p">){</span>
+ <span class="nx">Car</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>위와 같이 <code class="highlighter-rouge">apply</code> 함수를 이용해 <code class="highlighter-rouge">Van</code> 을 정의하는 경우, Van의 instance ben 은, 2번의 경우와 달리 <code class="highlighter-rouge">loc</code> 값은 전달이 되지만 <code class="highlighter-rouge">.move</code> 를 사용할 수 없다. 이유는 Car.prototype 과의 연결이 이뤄지지 않기 때문.</p>
+
+<h2 id="4prototypal-한-방식-">4.Prototypal 한 방식 💯</h2>
+
+<p>객체 생성과 동시에 프로토타입객체를 지정합니다.</p>
+
+<ul>
+  <li>첫 번째 변수는 부모객체로 사용할 객체( <code class="highlighter-rouge">Car.prototype</code> )</li>
+  <li>두 번쨰 변수는 상속될 개체의 속성에 추가</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Van</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">Car</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="nx">loc</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">Van</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Car</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="c1">// Object.create</span></code></pre></figure>
+
+<p><strong>이렇게 하면 객체 생성, 상속까지 문제 없이 이뤄진다.</strong></p>
+
+<hr />
+
+<h2 id="참고-2-와-관련하여-return-에-대한-이해">(참고) #2 와 관련하여 Return 에 대한 이해</h2>
+
+<p><code class="highlighter-rouge">new</code> 키워드와 함께 함수가 호출될 때, 명시적 Return 타입(Return 값이 정의된 경우)에 따라 Return 되는 값이 달라진다. (Okky의 RIchiKing 님 답변)</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Const1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+	<span class="k">return</span> <span class="p">{};</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Const1</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj1</span><span class="p">);</span> <span class="c1">// {}</span>
+<span class="c1">// Const1의 명시적 Return 값은 {}, 즉 참조(Reference) 타입이다.</span>
+<span class="c1">// {} 가 Return 된다.</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Const2의 명시적 Return 값은 10, 즉 기본(Primitive) 타입이다.</span>
+<span class="c1">// New 로 생성된 객체(!) 가 Return 된다.</span>
+
+<span class="kd">var</span> <span class="nx">Const2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Const2</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj2</span><span class="p">);</span> <span class="c1">// {age:15}</span></code></pre></figure>
+
+<p><strong>질문을 올린 곳</strong></p>
+
+<ul>
+  <li>Okky : <a href="https://okky.kr/article/391043">https://okky.kr/article/391043</a></li>
+  <li>FaceBook : <a href="https://www.facebook.com/groups/webfrontend/permalink/1088795681265166/">https://goo.gl/JgD1uN</a></li>
+</ul>
+
+<p><em>References</em></p>
+
+<p>Nextree. 2014. “JavaScript : 프로토타입(prototype) 이해”. Retrieved from http://www.nextree.co.kr/p7323</p>
+
+<p>LichKing, 2015. “#06. JavaScript의 new 와 생성자함수”. Retrieved from http://multifrontgarden.tistory.com/69</p>
+
+<h2 id="inheritances-관련-질문---전문"><a href="https://www.notion.so/Inheritances-3d7688cc4f9341b396609bc1bec47d0c">❓Inheritances 관련 질문 - 전문</a></h2>
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=JS 상속과 `New` 키워드에 대한 이해 - https://thisiswk.com/posts/js-%EC%83%81%EC%86%8D%EA%B3%BC-new-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%9D%B4%ED%95%B4 ', 'newwindow', 'width=500, height=225'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" width="15px" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x37__stroke"><g id="Twitter"><rect clip-rule="evenodd" fill="none" fill-rule="evenodd" height="128" width="128"/><path clip-rule="evenodd" d="M128,23.294    c-4.703,2.142-9.767,3.59-15.079,4.237c5.424-3.328,9.587-8.606,11.548-14.892c-5.079,3.082-10.691,5.324-16.687,6.526    c-4.778-5.231-11.608-8.498-19.166-8.498c-14.493,0-26.251,12.057-26.251,26.927c0,2.111,0.225,4.16,0.676,6.133    C41.217,42.601,21.871,31.892,8.91,15.582c-2.261,3.991-3.554,8.621-3.554,13.552c0,9.338,4.636,17.581,11.683,22.412    c-4.297-0.131-8.355-1.356-11.901-3.359v0.331c0,13.051,9.053,23.937,21.074,26.403c-2.201,0.632-4.523,0.948-6.92,0.948    c-1.69,0-3.343-0.162-4.944-0.478c3.343,10.694,13.035,18.483,24.53,18.691c-8.986,7.227-20.315,11.533-32.614,11.533    c-2.119,0-4.215-0.123-6.266-0.37c11.623,7.627,25.432,12.088,40.255,12.088c48.309,0,74.717-41.026,74.717-76.612    c0-1.171-0.023-2.342-0.068-3.49C120.036,33.433,124.491,28.695,128,23.294" fill-rule="evenodd" id="Twitter_1_"/></g></g></svg>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://thisiswk.com/posts/js-%EC%83%81%EC%86%8D%EA%B3%BC-new-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%9D%B4%ED%95%B4', 'newwindow', 'width=500, height=500'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" width="15px" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x31__stroke"><g id="Facebook_1_"><rect fill="none" height="128" width="128"/><path clip-rule="evenodd" d="M68.369,128H7.065C3.162,128,0,124.836,0,120.935    V7.065C0,3.162,3.162,0,7.065,0h113.871C124.837,0,128,3.162,128,7.065v113.87c0,3.902-3.163,7.065-7.064,7.065H88.318V78.431    h16.638l2.491-19.318H88.318V46.78c0-5.593,1.553-9.404,9.573-9.404l10.229-0.004V20.094c-1.769-0.235-7.841-0.761-14.906-0.761    c-14.749,0-24.846,9.003-24.846,25.535v14.246H51.688v19.318h16.681V128z" fill-rule="evenodd" id="Facebook"/></g></g></svg>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=https://thisiswk.com/posts/js-%EC%83%81%EC%86%8D%EA%B3%BC-new-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%9D%B4%ED%95%B4', 'newwindow', 'width=550, height=400'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" version="1.1" viewBox="0 0 128 128" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x35__stroke"><g id="Google_Plus"><rect clip-rule="evenodd" fill="none" fill-rule="evenodd" height="128" width="128"/><path clip-rule="evenodd" d="M40.654,55.935v16.13    c0,0,15.619-0.021,21.979-0.021C59.189,82.5,53.834,88.194,40.654,88.194c-13.338,0-23.748-10.832-23.748-24.194    s10.41-24.194,23.748-24.194c7.052,0,11.607,2.483,15.784,5.944c3.344-3.35,3.065-3.828,11.573-11.877    c-7.222-6.586-16.822-10.6-27.357-10.6C18.201,23.273,0,41.507,0,64c0,22.493,18.201,40.727,40.654,40.727    c33.561,0,41.763-29.275,39.044-48.792H40.654z M113.912,56.742V42.628h-10.063v14.113H89.358v10.081h14.491v14.517h10.063V66.823    H128V56.742H113.912z" fill-rule="evenodd" id="Google_Plus_1_"/></g></g></svg>
+            </a>
+          </div>
+
+          
+        </article>
+        <footer class="footer reveal">
+  <p>
+    <!--Chalk is a high quality, completely customizable, performant and 100% free-->
+    <!--blog template for Jekyll built by-->
+    <!--<a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" target="_blank" title="Download Chalk">here</a>.-->
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+      }
+    });
+  </script>
+
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-93560728-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+<script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+</body>
+</html>
